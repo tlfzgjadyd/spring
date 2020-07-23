@@ -4,4 +4,21 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+   <servlet>
+    <servlet-name>mvc</servlet-name><!--모든요청인/들어왔을때 dispatcherServlet으로 이를 처리하겠다 -->
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextClass</param-name><!-- 빈공장은 이곳에 있는것의 정보를 쓰겠다 -->
+      <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+    </init-param>
+    <init-param>
+      <param-name>contextConfigLocation</param-name> <!-- 만약 dispatcherServlet이 실행되면 -->
+      <param-value>kr.or.connect.mvcexam.config.WebMvcContextConfiguration</param-value>
+    </init-param><!-- 설정파일을 읽어서 실행해야 하는데 어떤 config파일 읽을지 등록해주는 부분이다 -->
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>mvc</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
 </web-app>
