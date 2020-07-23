@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 생성자 주입 -->
+	<!--  <bean id="Test" class="spring.di.entity.LectopiaTest">
+		<constructor-arg name="kor" value="100"/>
+		<constructor-arg name="eng" value="90"/>
+		<constructor-arg name="math">
+			<value>80</value>
+			</constructor-arg>
+	</bean>-->
+	
+	<!-- setter 주입 -->
+	<!-- <bean id="Test" class="spring.di.entity.LectopiaTest">
+		<property name="kor" value="100"/>
+		<property name="eng" value="90"/>
+		<property name="math" value="94"/>
+	</bean>-->
+	
+	<!-- 객체 주입 -->
+	<bean id="testPrinter" class="spring.di.entity.DefaultTestPrinter">
+		<constructor-arg>
+			<ref bean="Test"/>
+		</constructor-arg>
+	</bean>
+	
+</beans>
