@@ -1,28 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://java.sun.com/xml/ns/javaee"
-               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	  version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/kjavaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	  metadata-complete="true">
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<web-app>
 
-<display-name>Spring JavaConfig Sample</display-name>
+  <display-name>Spring JavaConfig Sample</display-name>
 
-<servlet>
-  <servlet-name>mvc</servlet-name>
-  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-  <init-param>
+  <servlet>
+    <servlet-name>mvc</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
       <param-name>contextClass</param-name>
-       <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
-  </init-param>
-  <init-param>
+      <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+    </init-param>
+    <init-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>kr.or.connect.webmvc.config.WebMvcContextConfiguration</param-value>
-  </init-param>
-  <load-on-startup>1</load-on-startup>
+      <param-value>kr.or.connect.mvcexam.config.WebMvcContextConfiguration</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-       <servlet-name>mvc</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping> <!-- url-pattern부분에 원하는 url써놓고 그걸로 요청 들어오면 이와 같은 servlet-name으로 -->
-					   <!-- 맵핑되어 있는 servlet-class가 이를 처리한다 지금은 /라는 패턴을 받으면 같은 mvc라는 이름으로 맵핑된 -->
-					   <!-- DispatcherServlet 클래스에서 이를 받아 처리하게 되는것 -->
+    <servlet-name>mvc</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
+
 </web-app>
+ 
